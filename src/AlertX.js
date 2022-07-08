@@ -3,7 +3,7 @@ function elementCreator(elem) { return document.createElement(elem); }
 var head = document.querySelector("head");
 var cssAddress = elementCreator("link");
 cssAddress.setAttribute("rel", "stylesheet")
-cssAddress.setAttribute("href", "AlertX.css")
+cssAddress.setAttribute("href", "https://cdn.jsdelivr.net/gh/thephibonacci/AlertX@main/src/AlertX.css")
 var cssAddress2 = elementCreator("link");
 cssAddress2.setAttribute("rel", "stylesheet")
 cssAddress2.setAttribute("href", "https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200")
