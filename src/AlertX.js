@@ -55,6 +55,7 @@ class AlertX {
                 btnCancelBgColor: this.#option.btnCancelBgColor == undefined ? this.#option.btnCancelBgColor = "red" : this.#option.btnCancelBgColor,
                 btnConfirmTxt: this.#option.btnConfirmTxt == undefined ? this.#option.btnConfirmTxt = "Confirm" : this.#option.btnConfirmTxt,
                 btnCancelTxt: this.#option.btnCancelTxt == undefined ? this.#option.btnCancelTxt = "Cancel" : this.#option.btnCancelTxt,
+                placeholder: this.#option.placeholder == undefined ? this.#option.placeholder = "Enter Field" : this.#option.placeholder,
             };
             return opt;
         } else {
@@ -387,6 +388,109 @@ class AlertX {
 
         })
     }
+    #_prompt(title, contxt, position, theme, _status, _placeholder, showBtnCancel = true, showBtnConfirm = true, btnConfirmTxt = "Confirm", btnCancelTxt = "Cancel", btnConfirmBgColor = "limegreen", btnCancelBgColor = "red") {
+        return new Promise((res) => {
+            var body, container, alertBox, headAlert, bodyAlert, input, conTitle, conStatus, status, titleTxt, conClose, close, conTxt, conBtn, btnConfirm, btnCancel, result;
+            body = document.querySelector("body")
+            container = elementCreator("div")
+            alertBox = elementCreator("div")
+            headAlert = elementCreator("div")
+            bodyAlert = elementCreator("div")
+            conTitle = elementCreator("div")
+            conStatus = elementCreator("div")
+            status = elementCreator("span")
+            titleTxt = elementCreator("div")
+            conClose = elementCreator("div")
+            close = elementCreator("span")
+            conTxt = elementCreator("div")
+            conBtn = elementCreator("div")
+            input = elementCreator("INPUT")
+            body.appendChild(container)
+            container.appendChild(alertBox)
+            alertBox.appendChild(headAlert)
+            alertBox.appendChild(bodyAlert)
+            headAlert.appendChild(conTitle)
+            conTitle.appendChild(conStatus)
+            conStatus.appendChild(status)
+            conTitle.appendChild(titleTxt)
+            headAlert.appendChild(conClose)
+            headAlert.appendChild(close)
+            bodyAlert.appendChild(conTxt)
+            bodyAlert.appendChild(input)
+            bodyAlert.appendChild(conBtn)
+            if (showBtnCancel) {
+                btnCancel = elementCreator("button")
+                conBtn.appendChild(btnCancel)
+                btnCancel.classList.add("cancel_btn")
+                btnCancel.innerHTML = btnCancelTxt
+                setStyle(btnCancel, "background-color:" + btnCancelBgColor + ";")
+                btnCancel.onclick = () => {
+                    container.remove()
+                    res(result = false)
+                };
+            }
+            if (showBtnConfirm) {
+                btnConfirm = elementCreator("button")
+                conBtn.appendChild(btnConfirm)
+                btnConfirm.classList.add("confirm_btn")
+                btnConfirm.innerHTML = btnConfirmTxt
+                setStyle(btnConfirm, "background-color:" + btnConfirmBgColor + ";")
+                btnConfirm.onclick = () => {
+                    if (input.value.length > 0) { 
+                        container.remove()
+                        res(result = input.value)
+                    }
+                };
+            }
+            container.classList.add("con_confirm")
+            container.classList.add("_" + position)
+            alertBox.classList.add("prompt")
+            if (theme == "dark") {
+                alertBox.classList.add("_alertDark");
+                conClose.classList.add("_closeDark");
+                setStyle(input, "color: #fff;")
+            }
+            else {
+                alertBox.classList.add("_alertLight");
+                conClose.classList.add("_closeLight");
+                setStyle(input, "color: #000;")
+            }
+            headAlert.classList.add("head_confirm")
+            if (_status == "danger") {
+                headAlert.classList.add("_x_danger")
+                status.innerHTML = "emergency_home";
+            } else if (_status == "warning") {
+                headAlert.classList.add("_x_warning")
+                status.innerHTML = "warning";
+            } else if (_status == "success") {
+                headAlert.classList.add("_x_success")
+                status.innerHTML = "priority";
+            } else if (_status == "primary") {
+                headAlert.classList.add("_x_primary")
+                status.innerHTML = "report";
+            }
+            conTitle.classList.add("title_confirm")
+            conStatus.classList.add("statusicon_confirm")
+            status.classList.add("material-symbols-outlined")
+            titleTxt.classList.add("titletext_confirm")
+            titleTxt.innerHTML = title
+            conClose.classList.add("_con_close_icon")
+            close.classList.add("material-symbols-outlined")
+            close.innerHTML = "close"
+            bodyAlert.classList.add("body_prompt")
+            conTxt.classList.add("con_text_confirm")
+            conTxt.innerHTML = contxt
+            input.classList.add("input_pormpt")
+            input.setAttribute("placeholder", _placeholder)
+            input.setAttribute("type", "text")
+            conBtn.classList.add("con_btn_confirm")
+            close.onclick = () => {
+                container.remove()
+                res(result = false)
+            };
+
+        })
+    }
     //Now the desired alert has been created with the input options, it is time to see which type of alert the user wants to show them, we will do this with the exec function.
     exec(context = "", title = "", time = 3000) {
         var options = this.#setOption()
@@ -401,6 +505,9 @@ class AlertX {
         }
         else if (options.type == "confirm") {
             return this.#_confirm(title, context, options.position, options.theme, options.status, options.showBtnCancel, options.showBtnConfirm, options.btnConfirmTxt, options.btnCancelTxt, options.btnConfirmBgColor, options.btnCancelBgColor);
+        }
+        else if (options.type == "prompt") {
+            return this.#_prompt(title, context, options.position, options.theme, options.status, options.placeholder, options.showBtnCancel, options.showBtnConfirm, options.btnConfirmTxt, options.btnCancelTxt, options.btnConfirmBgColor, options.btnCancelBgColor);
         }
         else {
             this.#_alertx(title, context, options.position, options.theme, options.status, time);
