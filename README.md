@@ -1,7 +1,7 @@
 # AlertX (JavaScript Alert)
 <hr>
 <h2>INSTALL</h2>
-<p>for install AlertX just need add cdnjs to head your document.</p>
+<p>To install and use, just place the CDN in the head tag.</p>
 <pre><script src="https://cdn.jsdelivr.net/gh/thephibonacci/AlertX@main/src/AlertX.js"></script></pre>
 <hr>
 <h2>USE</h2>
