@@ -6,6 +6,14 @@
     user-select: none;
 }
 
+.con_confirm {
+    position: fixed;
+    width: 320px;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
 ._alert {
     box-sizing: border-box;
     width: auto;
@@ -17,6 +25,29 @@
     border-left: 10px solid;
     padding: 5px;
     word-break: break-word;
+}
+
+.confirm {
+    box-sizing: border-box;
+    width: 290px;
+    height: 160px;
+    border-radius: 5px;
+    word-break: break-word;
+    background-color: rgba(0, 0, 0, 0.88);
+    overflow: hidden;
+}
+
+.head_confirm {
+    width: 100%;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.body_confirm {
+    width: 100%;
+    height: 130px;
 }
 
 ._alertx {
@@ -62,7 +93,7 @@
     color: red;
 }
 
-._tit_danger{
+._tit_danger {
     color: red;
 }
 
@@ -71,7 +102,7 @@
     color: deepskyblue;
 }
 
-._tit_primary{
+._tit_primary {
     color: deepskyblue;
 }
 
@@ -80,17 +111,36 @@
     color: limegreen;
 }
 
-._tit_success{
+._tit_success {
     color: limegreen;
+}
+
+.con_text_confirm {
+    width: 100%;
+    height: 60px;
+    overflow: hidden;
+    text-align: center;
+    font-size: 16px;
+    box-sizing: border-box;
+    padding: 5px;
+}
+
+.con_btn_confirm {
+    width: 100%;
+    height: 70px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 ._x_warning {
     background-color: #ffeeba;
-    color:rgb(255, 145, 0) ;
+    color: rgb(255, 145, 0);
 }
 
-._tit_warning{
-    color:rgb(255, 145, 0);
+._tit_warning {
+    color: rgb(255, 145, 0);
 }
 
 ._body_txt {
@@ -122,6 +172,26 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.title_confirm {
+    display: flex;
+    align-items: center;
+}
+
+.statusicon_confirm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    margin-left: 5px;
+}
+
+.titletext_confirm {
+    font-size: 18px;
+    margin-left: 5px;
+    height: 23px;
+    overflow: hidden;
 }
 
 ._alertTxt {
@@ -243,7 +313,7 @@
     max-height: none !important;
 }
 
-._head_alertz{
+._head_alertz {
     width: 100%;
     height: 30px;
     display: flex;
@@ -251,11 +321,11 @@
     justify-content: flex-start;
 }
 
-.con_zstatus_icon{
+.con_zstatus_icon {
     margin: 0px 5px;
 }
 
-.z_head_title{
+.z_head_title {
     width: 220px;
     height: 26px;
     font-size: 18px;
@@ -263,7 +333,7 @@
     overflow: hidden;
 }
 
-.context{
+.context {
     height: 20px;
     margin: 0px 35px;
     overflow: hidden;
@@ -282,9 +352,28 @@
 }
 
 ._z_warning {
-    color:rgb(255, 145, 0) ;
+    color: rgb(255, 145, 0);
 }
 
+.con_btn_confirm button {
+    margin: 10px;
+    width: 100px;
+    height: 38px;
+    border-radius: 20px;
+    border: 0;
+    font-size: 16px;
+    line-height: 35px;
+    font-weight: 600;
+    overflow: hidden;
+}
+
+.confirm_btn {
+    color: #fff;
+}
+
+.cancel_btn {
+    color: #fff;
+}
 @keyframes alertx {
     0% {
         width: 65px;
