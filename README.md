@@ -2,7 +2,10 @@
 <hr>
 <h2>INSTALL</h2>
 <p>To install and use, just place the CDN in the head tag.</p>
+<h4>Normall</h4>
 <pre><script src="https://cdn.jsdelivr.net/gh/thephibonacci/AlertX@main/src/AlertX.js"></script></pre>
+<h4>Minify (Recommended)</h4>
+<pre><script src="https://cdn.jsdelivr.net/gh/thephibonacci/AlertX@main/min/AlertX.js"></script></pre>
 <hr>
 <h2>USE</h2>
 <h3>Step 1: </h3>
