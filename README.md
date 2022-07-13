@@ -8,6 +8,7 @@
 <h3>Step 1: </h3>
 <pre>var Alert = new AlertX()</pre>
 <h3>Step 2: </h3>
+<h4>Set option for alert type </h4>
 <pre>
 Alert.option({
 type:"",
@@ -15,6 +16,22 @@ position:"",
 status:"",
 theme:""
 })
+</pre>
+
+<h4>Set option for confirm type </h4>
+<pre>
+Alert.option({
+      type: "confirm",
+      position: "topLeft",
+      status: "danger",
+      theme: "dark",
+      showBtnCancel: true or false,
+      showBtnConfirm: true or false,
+      btnConfirmBgColor: "lime" or "#00ff00" or "rgb(0,255,0)",
+      btnCancelBgColor: "lime" or "#00ff00" or "rgb(0,255,0)",
+      btnConfirmTxt: "Confirm",
+      btnCancelTxt: "Cancel",
+ })
 </pre>
 
 <h3>Step 3: </h3>
@@ -60,4 +77,5 @@ theme:""
   <li>success</li>
   <li>primary</li>
 </ul>
+
 <hr><hr><hr><hr><hr>
