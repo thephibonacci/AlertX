@@ -32,9 +32,26 @@ Alert.option({
       showBtnConfirm: true or false,
       btnConfirmBgColor: "lime" or "#00ff00" or "rgb(0,255,0)",
       btnCancelBgColor: "lime" or "#00ff00" or "rgb(0,255,0)",
-      btnConfirmTxt: "Confirm",
-      btnCancelTxt: "Cancel",
+      btnConfirmTxt: "Confirm", //string
+      btnCancelTxt: "Cancel", //string
  })
+</pre>
+
+<h4>Set option for prompt type </h4>
+<pre>
+Alert.option({
+      type: "prompt",
+      position: "topLeft",
+      status: "success",
+      theme: "light",
+      showBtnCancel: true or false,
+      showBtnConfirm: true or false,
+      btnConfirmBgColor: "lime" or "#00ff00" or "rgb(0,255,0)",
+      btnCancelBgColor: "lime" or "#00ff00" or "rgb(0,255,0)",
+      btnConfirmTxt: "GO", //string
+      btnCancelTxt: "CANCEL", //string
+      placeholder:"Enter Url" //string
+    });
 </pre>
 
 <h3>Step 3: </h3>
