@@ -101,16 +101,14 @@ Alert.option({
 <h3>For example</h3>
 <p>let's create a danger alert (alertx type)</p>
 <pre>
-var dangerAlert = new AlertX();
-
-dangerAlert.option({
-status: "danger",
-theme:"dark",
-position:"topLeft,
-type:"alertx"
-});
-
-dangerAlert.exec("Click Cancel OR Close Button", "Error", 2000);
+  var dangerAlert = new AlertX();
+    dangerAlert.option({
+      status: "danger",
+      theme: "dark",
+      position: "topLeft",
+      type: "alertx",
+    });
+    dangerAlert.exec("Click Cancel OR Close Button", "Error", 2000);
 </pre>
 <p>Create an alert by typing confirm</p>
 <pre>
