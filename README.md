@@ -114,8 +114,8 @@ dangerAlert.exec("Click Cancel OR Close Button", "Error", 2000);
 </pre>
 <p>Create an alert by typing confirm</p>
 <pre>
-var confirmAlert = new AlertX();
-confirmAlert.option({
+ var confirmAlert = new AlertX();
+    confirmAlert.option({
       type: "confirm",
       position: "topLeft",
       status: "danger",
@@ -126,13 +126,14 @@ confirmAlert.option({
       btnCancelBgColor: "red",
       btnConfirmTxt: "Confirm",
       btnCancelTxt: "Cancel",
- })
- confirmAlert.exec("Do you confirm the login?","Warning").then((res) => {
+    });
+    confirmAlert.exec("Do you confirm the login?", "Warning").then((res) => {
       if (res) {
-      //The confirm button is clicked 
+        //The confirm button is clicked
       } else {
-      //The cancel or close button is clicked
+        //The cancel or close button is clicked
       }
+    });
 </pre>
 <p>Create an alert by typing prompt</p>
 <pre>
