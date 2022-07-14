@@ -97,5 +97,72 @@ Alert.option({
   <li>success</li>
   <li>primary</li>
 </ul>
+<hr>
+<h3>For example</h3>
+<p>let's create a danger alert (alertx type)</p>
+<pre>
+var dangerAlert = new AlertX();
 
-<hr><hr><hr><hr><hr>
+dangerAlert.option({
+status: "danger",
+theme:"dark",
+position:"topLeft,
+type:"alertx"
+});
+
+dangerAlert.exec("Click Cancel OR Close Button", "Error", 2000);
+</pre>
+<p>Create an alert by typing confirm</p>
+<pre>
+var confirmAlert = new AlertX();
+confirmAlert.option({
+      type: "confirm",
+      position: "topLeft",
+      status: "danger",
+      theme: "dark",
+      showBtnCancel: true,
+      showBtnConfirm: true,
+      btnConfirmBgColor: "lime",
+      btnCancelBgColor: "red",
+      btnConfirmTxt: "Confirm",
+      btnCancelTxt: "Cancel",
+ })
+ confirmAlert.exec("Do you confirm the login?","Warning").then((res) => {
+      if (res) {
+      //The confirm button is clicked 
+      } else {
+      //The cancel or close button is clicked
+      }
+</pre>
+<p>Create an alert by typing prompt</p>
+<pre>
+ var Alert = new AlertX();
+    Alert.option({
+      type: "prompt",
+      position: "topLeft",
+      status: "success",
+      theme: "light",
+      showBtnCancel: true,
+      showBtnConfirm: true,
+      btnConfirmBgColor: "limegreen",
+      btnCancelBgColor: "red",
+      btnConfirmTxt: "GO",
+      btnCancelTxt: "CANCEL",
+      placeholder:"Enter Url"
+    });
+    Alert.exec("Enter Url", "Success").then((res) => {
+      if (res) {
+        window.location.href = res;
+      } else {
+        var dangerAlert = new AlertX();
+        dangerAlert.option({
+          status: "danger",
+          theme:"dark",
+          position:"topLeft",
+          type:"alertx"
+        });
+        dangerAlert.exec("Click Cancel OR Close Button", "Error", 2000);
+      }
+    });
+</pre>
+<hr>
